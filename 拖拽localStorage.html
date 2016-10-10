@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	div{width:300px;height:300px;background:#9F0;position:absolute;left:0;top:0;border-radius:50%;}
+</style>
+<script>
+	window.onload = function(){
+		var oDiv = document.getElementById('div');
+		var X = localStorage.getItem('x')||0;
+		var Y = localStorage.getItem('y')||0;
+		if(X||Y){
+			oDiv.style.left = X+'px';
+			oDiv.style.top = Y+'px';
+		}
+		oDiv.onmousedown = function(ev){
+			var oEvent = ev||event;
+			var disX = oEvent.clientX-oDiv.offsetLeft;
+			var disY = oEvent.clientY-oDiv.offsetTop;
+			document.onmousemove = function(ev){
+				var oEvent = ev||event;
+				oDiv.style.left = oEvent.clientX-disX+'px';
+				oDiv.style.top = oEvent.clientY-disY+'px';
+			}
+			document.onmouseup = function(){
+				localStorage.setItem('x',oDiv.offsetLeft);
+				localStorage.setItem('y',oDiv.offsetTop);
+				document.onmousemove = null;
+				document.onmouseup = null;
+			}
+			oDiv.releaseCapture&&oDiv.releaseCapture();
+		}
+		oDiv.setCapture&&oDiv.setCapture();
+		return false;
+	}
+</script>
+</head>
+
+<body>
+<div id="div"></div>
+</body>
+</html>
