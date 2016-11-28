@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		@keyframes play {
+		    100% {
+		        background-position: -737px -2px;
+		    }
+		}
+
+		@-webkit-keyframes play {
+		    100% {
+		        background-position: -737px -2px;
+		    }
+		}
+
+		.sprite {
+		    width: 145px;
+		    height: 300px;
+		    display: inline-block;
+		    overflow: hidden;
+		    background: url('img2/box.png') no-repeat -2px -2px;
+		    animation: play 0.8s steps(5) infinite;
+		    -webkit-animation: play 0.8s steps(5) infinite;
+		    display: none;
+		    position: absolute;
+			left: 0;right: 0;bottom: 0;top: 0;
+			margin:auto;
+		}
+		.con{
+			position: absolute;
+			left: 0;right: 0;bottom: 0;top: 0;
+			margin:auto;
+		}
+		
+	</style>
+	<script src="jquery-1.12.3.min.js"></script>
+	<script>
+		$(function(){
+			if(window.DeviceMotionEvent) {
+			    var speed = 25;    
+			    var x, y, z, lastX, lastY, lastZ;
+			    x = y = z = lastX = lastY = lastZ = 0;
+			    var isStarted = false;
+			    window.addEventListener('devicemotion', function(event){
+			        var acceleration = event.accelerationIncludingGravity;
+			        x = acceleration.x;
+			        y = acceleration.y;
+			        if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed) {
+			            start();
+			        }
+			        lastX = x;
+			        lastY = y;
+			    }, false);
+			}
+			
+
+			
+			function start() {
+			    $('.con').hide();    
+			    $('.sprite').show();    
+			    setTimeout(function(){
+			    	$('.con').show();    
+			    	$('.sprite').hide();    
+			    	var urls = ["mcube.html", "mboom.html","mcell.html"];    
+				    var jumpTo = urls[Math.round((Math.random() *(urls.length+1)))];    
+				    window.location = jumpTo;
+			    }, 3000);
+			}
+		});
+	</script>
+</head>
+<body>
+	
+	<img src="img2/qian.png" alt="" class="con">
+	<div class="sprite">
+		
+	</div>
+</body>
+</html>

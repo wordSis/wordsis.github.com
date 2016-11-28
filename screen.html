@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>document</title>
+<style>
+	*{
+		padding:0;
+		margin:0;
+	}
+	html,body{
+		width:100%;
+		height:100%;
+		overflow: hidden;
+	}
+	canvas{
+		background:#000;
+	}
+	span{
+		font-size: 50px;
+	}
+</style>
+<script>
+function rnd(n,m){
+	return parseInt(Math.random()*(m-n)+n);
+}
+window.onload=function(){
+	var c=document.getElementsByTagName('canvas')[0];
+	var W=document.documentElement.clientWidth;
+	var H=document.documentElement.clientHeight;
+	c.width=W;
+	c.height=H;
+	//准备画笔
+	var gd=c.getContext('2d');
+	gd.lineWidth=2;
+	//准备点：
+	var N=10;
+	var p=[];
+	var len=10;
+	var arrP=[
+		/*[
+			{
+				x:
+				y:
+			},
+			{
+
+			},
+			{}
+		],
+		[],
+		[]*/
+	];
+
+	var r=rnd(0,256);
+	var g=rnd(0,256);
+	var b=rnd(0,256);
+
+	setInterval(function(){
+		r=rnd(0,256);
+		g=rnd(0,256);
+		b=rnd(0,256);
+	}, 1000)
+	for(var i=0; i<N; i++){
+		p[i]={
+			x:rnd(0,W),
+			y:rnd(0,H),
+			speedX:rnd(-30,30),
+			speedY:rnd(-30,30)
+		}
+	}
+
+	setInterval(function(){
+		gd.clearRect(0,0,W,H);
+		gd.beginPath();
+		console.log(gd.strokeStyle)
+		for(var i=0; i<p.length; i++){
+			drawPoint(p[i]);
+		}
+		//划线
+		gd.beginPath();
+		gd.moveTo(p[0].x,p[0].y)
+		for(var i=1; i<p.length; i++){
+			gd.lineTo(p[i].x,p[i].y);
+		}
+		gd.closePath();
+		gd.stroke();
+
+		//画尾巴
+		var arr=[];
+		for(var i=0; i<p.length; i++){
+			arr[i]={
+				x:p[i].x,
+				y:p[i].y
+			}
+		}
+		
+		arrP.push(arr);
+		if(arrP.length>len){
+			arrP.shift();
+		}
+
+		
+		for(var i=0; i<arrP.length; i++){
+			gd.beginPath();
+			var opacity=i/arrP.length;
+			gd.strokeStyle='rgba('+r+','+g+','+b+','+opacity+')';
+			gd.moveTo(arrP[i][0].x,arrP[i][0].y);
+			for(var j=1; j<arrP[i].length; j++){
+				gd.lineTo(arrP[i][j].x,arrP[i][j].y);
+			}
+			gd.closePath();
+			gd.stroke();
+		}
+	},16)
+
+	function drawPoint(p){
+		pW=1;
+		pH=1;
+		p.x+=p.speedX;
+		p.y+=p.speedY;
+
+		if(p.x<0){
+			p.x=0;
+			p.speedX*=-1;
+		}
+		if(p.y<0){
+			p.y=0;
+			p.speedY*=-1;
+		}
+		if(p.x>W){
+			p.x=W;
+			p.speedX*=-1;
+		}
+		if(p.y>H){
+			p.y=H;
+			p.speedY*=-1;
+		}
+		gd.fillRect(p.x,p.y,pW,pH);
+	}
+};
+</script>
+</head>
+<body>
+<canvas width="800" height="500">
+	<span>你的浏览器不支持canvas</span>
+</canvas>
+</body>
+</html>

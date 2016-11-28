@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社 - www.zhinengshe.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul {
+            width: 366px;
+            margin: 100px auto;
+        }
+        ul li {
+            width: 100px;
+            height: 100px;
+            float: left;
+            border: 1px solid #000;
+            background: #ccc;
+            margin: 10px;
+        }
+    </style>
+    <script src="move_all.js"></script>
+    <script>
+        window.onload = function() {
+            var oBtn = document.body.children[0];
+            var oUl = document.body.children[1];
+            var aLi = oUl.children;
+
+            // 布局转化
+            var aPos = [];
+            for (var i = 0; i < aLi.length; i++) {
+                aPos[i] = {
+                    left: aLi[i].offsetLeft,
+                    top: aLi[i].offsetTop
+                };
+            }
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].style.left = aPos[i].left + 'px';
+                aLi[i].style.top = aPos[i].top + 'px';
+                aLi[i].style.position = 'absolute';
+                aLi[i].style.margin = 0;
+            }
+
+            // 分页
+            oBtn.onclick = function() {
+                var timer = null;
+                clearInterval(timer);
+                var i = 0;
+                timer = setInterval(function(){
+                    (function(index){
+                        // 收li
+                        move(aLi[i], {
+                            left: 0, top: 0,
+                            width: 0, height: 0, opacity: 0
+                        }, {
+                            complete: function() {
+                                // 最后一个li运动完成放回来
+                                // i 值的问题（循环开定时器）
+                                // 定时器里面的i是循环后的i
+                                // 解决 封闭空间
+                                if (index == aLi.length-1) {
+                                    //  回来设置每个li的背景
+                                    for (var i = 0; i < aLi.length; i++) {
+                                        aLi[i].style.background = 'rgb('+parseInt(Math.random()*256)+','+parseInt(Math.random()*256)+','+parseInt(Math.random()*256)+')';
+                                    }
+                                    // 从最后一个开始回来
+                                    i = aLi.length - 1;
+                                    // 往外回
+                                    timer = setInterval(function(){
+                                        move(aLi[i], {
+                                            width:100, height:100, left: aPos[i].left, top: aPos[i].top, opacity: 1
+                                        });
+                                        i--;
+                                        if (i < 0) {
+                                            clearInterval(timer);
+                                        }
+                                    },200);
+                                }
+                            }
+                        })
+                    })(i);
+                    i++;
+                    if (i == aLi.length) {
+                        clearInterval(timer);
+                    }
+                },200);
+
+            };
+        };
+    </script>
+</head>
+<body>
+    <input type="button" value="下一页" >
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>
