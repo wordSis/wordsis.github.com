@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="css/bcss/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    *{margin:0;padding: 0;list-style: none;font-family:'微软雅黑';}
+    a{text-decoration: none;}
+    .txt{font-size: 18px;font-weight: bold;letter-spacing: 0.2em;}
+    #returnTop{
+      position: fixed;right: 20px;bottom: 10px;display: none;z-index: 999;
+    }
+    .toTop{font-size: 40px;}
+    .con{
+      line-height: 30px;padding: 5px;font-size: 16px;position: relative;
+    }
+    
+    .contentlist{
+      width: 100%;height: 100%;border: 1px solid #ccc;margin-bottom: 10px;border-radius: 5px;
+    }
+    .contentlist>h2{border-left: 3px solid red;padding-left: 10px;}
+    .contentlist>p{border-left: 3px solid blue;padding-left: 10px;}
+    .contentlist:hover{border:1px solid #DBFA43;}
+    .read{
+      display: block;
+      margin-bottom: 10px; 
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container">
+  <div class="container-fluid">
+    <p id="returnTop"><span class="glyphicon glyphicon-hand-up toTop" ></span></p>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand txt" href="#" ><span class="glyphicon glyphicon-tower"></span>丁成成</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">游戏<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="fish/fish.html">面向对象捕鱼</a></li>        
+            <li><a href="paino/index.html">八键小钢琴</a></li>
+          </ul>
+        </li>
+        <li><a href="article.html">Soul</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">蹂躏图片 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="page.html">PC端图片翻页</a></li>
+            <li><a href="mpage.html">移动端图片翻页</a></li>
+            <li class="divider"></li>
+            <li><a href="cell.html">PC端图片颗粒</a></li>
+            <li><a href="mcell.html">移动端图片颗粒</a></li>
+            <li class="divider"></li>
+            <li><a href="boom.html">PC端图片爆炸</a></li>
+            <li><a href="mboom.html">移动端图片爆炸</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
+  </div><!-- /.container-fluid -->
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9"  >
+     <div class="row" id="pagecontents">
+    <div class="col-sm-9  contentlist">
+      <h2 >前端页面跳转实现方式</h2>
+      <p >&lt;meta http-equiv="refresh" content="5;url=http://my.oschina.net/ososchina/blog"&gt;</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>ReferenceError与TypeError的产生</h2>
+      <p>在所有嵌套的作用域中遍寻不到所需的变量，引擎就会抛出ReferenceError;如果尝试对变量值进行不合理的操作，引擎则会抛出TypeError。</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>PC端传统网页试试使用Zepto.js进行开发</h2>
+      <p>目前，从用户访问情况来看，绝大多数用户使用的是现代浏览器，也就是Zepto支持的浏览器，这让这些浏览器中直接使用Zepto成为了可能……</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>省时的浏览器同步测试工具</h2>
+      <p>Browsersync能让浏览器实时、快速响应您的文件更改（html、js、css、sass、less等）并自动刷新页面。更重要的是 Browsersync可以同时在PC、平板、手机等设备下进项调试。您可以想象一下：“假设您的桌子上有pc、ipad、iphone、android等设备，同时打开了您需要调试的页面，当您使用browsersync后，您的任何一次代码保存，以上的设备都会同时显示您的改动”。无论您是前端还是后端工程师，使用它将提高您30%的工作效率。</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>先有鸡还是先有蛋</h2>
+      <p>Javascript看到 var a = 2;会看成两个声明：var a 和 a = 2;第一个声明在编译阶段进行，第二个声明会被留在原地等待执行。故，先有蛋（声明），后有鸡（赋值）。</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>提升的优先级</h2>
+      <p>函数会首先被提升，然后才是变量。我们应尽量避免在块内部声明函数。</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>神奇的闭包</h2>
+      <p>只要使用了回调函数，实际上就是在使用了闭包。</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>箭头函数</h2>
+      <p>箭头函数在涉及this绑定时的行为和普通行数的行为完全不一致。它放弃了所有普通this绑定的规则，取而代之的使用当前的词法作用域覆盖了this本来的值。</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>模块</h2>
+      <p>为创建内部作用域而调用一个包装函数，包装函数的返回值必须至少包括一个对内部函数的引用，这样就会创建涵盖整个包装函数内部作用域的闭包。</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+     <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+     <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div class="col-sm-9  contentlist">
+      <h2>Test</h2>
+      <p>这是一次测试</p>
+      <a href="#" class="read">阅读全文...</a>
+    </div>
+    <div id="navigatediv" class="col-sm-9 ">
+    </div>
+</div>
+<br>
+</div>
+  <div class="col-sm-3">
+    <ul class="list-group">
+      <li class="list-group-item"><a href="cube.html">PC端小<span style="color:red;">Cube</span></a><span class="badge">1</span></li>
+      <li class="list-group-item"><a href="mcube.html">移动端小<span style="color:red;">Cube</span></a><span class="badge">5</span></li>
+      <li class="list-group-item"><a href="3dcir.html">PC端小<span style="color: green;">Circle</span></a><span class="badge">5</span></li>
+      <li class="list-group-item"><a href="m3dcir.html">移动端小<span style="color: green;">Circle</span></a><span class="badge">0</span></li>
+      <li class="list-group-item"><a href="waterfull.html"><span style="color:red;">WaterFull</span>&nbsp;Theory</a><span class="badge">1</span></li>
+      <li class="list-group-item"><a href="picwall.html"><span style="color: purple;">Picture&nbsp;&nbsp;Wall</span></a><span class="badge">0</span></li>
+      <li class="list-group-item"><a href="screen.html"><span style="color: orange;">Auto&nbsp;&nbsp;Screen</span></a><span class="badge">7</span></li>
+      <li class="list-group-item"><a href="gamble.html"><span style="color: red;">抽&nbsp;&nbsp;签</span></a><span class="badge">2</span></li>
+       <li class="list-group-item"><a href="company.html"><span style="color: blue;">手机页面(640px)</span></a><span class="badge">7</span></li>
+      <li class="list-group-item"><span style="font-weight: bold;font-size: 18px;">欢迎来电：<a href="tel">155-0107-2755</a></span></li>
+    </ul>
+  </div>
+</div>
+
+
+<script src="jquery-1.12.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easypage.js"></script>
+<script>
+  $(function (){ 
+   $('.carousel').carousel({
+      interval: 1500
+   });
+   $(
+    function(){
+      $.easypage({'contentclass':'contentlist','navigateid':'navigatediv','everycount':5,'navigatecount':5}); 
+    }
+   )
+   $('#myTab li:eq(1) a').tab('show');
+   $("#wish").popover();
+   $("#wish1").popover();
+   $(window).scroll(function(){  
+      if ($(window).scrollTop()>20){  
+          $("#returnTop").fadeIn(1000);  
+      }  
+      else  
+      {  
+          $("#returnTop").fadeOut(1000);  
+      }  
+    });
+    $("#returnTop").click(function(){  
+        $('body,html').animate({scrollTop:0},1000);  
+        return false;  
+    });   
+  });
+</script>
+</body>
+</html>
