@@ -1,0 +1,111 @@
+*{margin:0;padding:0;list-style:none;text-decoration:none;}
+body{font-family:'微软雅黑';}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+img{width:100%;}
+header{width:16rem;height:2.5rem;overflow:hidden;position:relative;}
+header .back{width:3.17rem;height:1.55rem;background:url(img/back.png) no-repeat;float:left;
+margin: 0.5rem;background-size:3.17rem 1.55rem;}
+header .logo{width:3.7rem;height:1rem;background:url(img/logo.png) no-repeat;float:left;
+position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+background-size:3.7rem 1rem;}
+section .tab{width:16rem;}
+.tab .img{width:16rem;}
+.tab p{width:16rem;height:1rem;display:-webkit-box;-webkit-box-pack:center;-webkit-box-align:center;}
+.tab p span{display:block;width:0.25rem;height:0.25rem;background:#a9a9a9;border-radius:50%;
+margin-right:0.25rem;}
+section.nav{width:16rem;padding-bottom:0.5rem;}
+.nav ul{width:16rem;;overflow:hidden;padding-left:0.45rem;}
+.nav ul li {width:2rem;height:2rem;border-radius:50%;float:left;margin:0.9rem}
+.nav ul li div{width:2rem;height:2rem;border-radius:50%;}
+.nav ul li .sprit2{background:#000 url(img/sp.png) no-repeat center;background-size:.9rem .9rem;}
+.nav ul li .sprit{background:#ff3900 url(img/sp2.png) no-repeat center;background-size:.9rem .9rem;}
+.nav ul li .sprit3{background:#8bca11 url(img/sp3.png) no-repeat center;background-size:.9rem .9rem;}
+.nav ul li .sprit4{background:#ff529d url(img/sp4.png) no-repeat center;background-size:.9rem .9rem;}
+.nav ul li .sprit8{background:#f5493c url(img/sp5.png) no-repeat center;background-size:.9rem .9rem;}
+.nav ul li .sprit5{background:#cfa871 url(img/sp6.png) no-repeat center;background-size:.9rem .9rem;}
+.nav ul li .sprit6{background:#ffb021 url(img/sp7.png) no-repeat center;background-size:.9rem .9rem;}
+.nav ul li .sprit7{background:#2dc814 url(img/sp8.png) no-repeat center;background-size:.9rem .9rem;}
+.nav ul li p{font-size:0.5rem;text-align:center;line-height:0.5rem;margin-top:0.44rem;}
+section.listTitle{
+	width:15rem;
+	font-size:0.625rem;
+	margin:0.5rem;
+	border-bottom: 4px solid #dcdcdc;
+	padding-bottom:.5rem;
+	font-weight: bold;
+}
+section.listTitle div:nth-child(1){
+	float: left;
+	color:#000;
+	border-left:4px solid #d51938;
+	padding-left:0.5rem;
+}
+section.listTitle div:nth-child(2){
+	float: right;
+	color:#000;
+}
+section.list{width:16rem;}
+.list ul{width:15rem;margin-left:0.5rem;}
+.list ul li{width:100%;height:3rem;display:-webkit-box;margin-bottom:.5rem;}
+.list ul li .pic1 {background:#e00202;width:1.5rem;height:3rem;}
+.list ul li div .pic-num{display:block;text-align:center;line-height:3rem;color:#FFF;font-size:1rem;}
+.list ul li img{width:4.5rem;}
+.list ul li .priceBox{-webkit-box-align:center;background: #f4f4f4;
+-webkit-box-flex:1;display: -webkit-box;}
+.list ul li .priceBox .priceMsg{-webkit-box-flex:1;}
+.list ul li .priceBox .priceMsg p{font-size:0.5rem;color:#b2b2b2;margin-left:0.5rem;}
+.list ul li .priceBox .priceMsg p span .num{color:#c7223d;}
+.list ul li .priceBox .priceMsg p span .line{margin-left:.15rem;text-decoration:line-through;}
+.list ul li .priceBox .price{display:-webkit-box;margin-right:.5rem;}
+.list ul li .priceBox .price p{color:#d51938;font-size:0.65rem;font-weight:bold;}
+.list ul li .priceBox .price i{display:block;background:url(img/gt.png) no-repeat;
+background-size:.35rem .5rem;width:0.5rem;height:1rem;margin-left:.5rem;margin-top:.1rem;}
+.list ul li .pic2 {background:#ff4800;width:1.5rem;height:3rem;}
+.list ul li .pic3 {background:#ff7300;width:1.5rem;height:3rem;}
+.list ul li .pic4 {background:#ff9d00;width:1.5rem;height:3rem;}
+.list ul li .pic5 {background:#ffa800;width:1.5rem;height:3rem;}
+.list ul li .pic6 {background:#ffb400;width:1.5rem;height:3rem;}
+.list ul li .pic7 {background:#ffba00;width:1.5rem;height:3rem;}
+.list ul li .pic8 {background:#fcd000;width:1.5rem;height:3rem;}
+.list ul li .pic9 {background:#ffd719;width:1.5rem;height:3rem;}
+.list ul li .pic10 {background:#ffe152;width:1.5rem;height:3rem;}
+section.common{width:15rem;height:2rem;margin:.5rem 0 0 .5rem;background:#f5f5f5;position:relative;}
+.common p{font-size:.65rem;text-align:center;line-height:2rem;color:#666;}
+.common span{width:.375rem;height:.5rem;background:url(img/gt.png) no-repeat;background-size:.375rem .5rem;
+position:absolute;right:.5rem;top:.85rem;}
+section.common1{width:16rem;height:7.575rem;background:#f5f5f5;padding-top:1rem;font-weight:bold;}
+.common1 p{font-size:.65rem;text-align:center;line-height:.625rem;color:#666;}
+.common1 .txt{color:#999;font-size:.5rem;}
+.common1 div{background:url(img/ju.png) no-repeat ;width:13rem;height:4.45rem;background-size:13rem 4.45rem;margin:.65rem 0 0 2rem;}
+.tab1{width:15rem;margin:.5rem 0 .5rem .5rem;height:8.75rem;}
+.tab1 img{width:3.75rem;height:8.81rem;float:left;}
+.tab1 .table{width:11.25rem;height:8.8rem;float:left;border:1px solid #eee;border-collapse: collapse;}
+.tab1 .table tbody tr td{font-size:.625rem;border:1px solid #ccc;width:3.75rem;height:2.192rem;
+text-align:center;line-height:2.192rem;}
+.tab1 .table tbody tr .cls{color:#d51942;}
+section.brand{width:15rem;height:4rem;margin: .5rem 0 1.25rem.5rem;}
+.brand ul li{float:left;position:relative;width:5rem;height:4rem;}
+.brand ul .brand-good1{background:#38a4f1;}
+.brand ul .brand-good1 div{width:.95rem;height:1.1rem;background:url(img/apple.png) no-repeat;background-size:.95rem 1.1rem;}
+.brand ul li div{position:absolute;left:2.15rem;top:.85rem;}
+.brand ul li p{font-size:.6rem;text-align:center;margin-top:2.8rem;color:#fff;}
+.brand ul .brand-good2{background:#8bca11;}
+.brand ul .brand-good2 div{width:.925rem;height:1.05rem;background:url(img/andriod.png) no-repeat;background-size:.925rem 1.05rem;}
+.brand ul .brand-good3{background:#ff7404;}
+.brand ul .brand-good3 div{width:.95rem;height:.85rem;background:url(img/sug.png) no-repeat;background-size:.95rem .85rem;}
+
+section.register{width:14.55rem;height:1.45rem;background:#f8f8f8;padding:.75rem .7rem 0 .75rem; }
+section.register .register-left{float:left;font-size:.65rem;font-weight:bold;}
+section.register .register-right{float:right;font-size:.65rem;position:relative;margin-right:.5rem;}
+section.register .register-right span{width:.425rem;height:.225rem;}
+section.register .register-right span:nth-child(2){background:url(img/up.png) no-repeat;background-size:.425rem .225rem;
+position:absolute;left:1.2rem;top:.25rem;}
+footer{width:16rem;height:2.2rem;background:#f9f9f9;position:relative;}
+footer div{background:url(img/bottom.png) no-repeat ;background-size:15.15rem 1.65rem;width:15.15rem;height:1.65rem; 
+position:absolute;left:.8rem;top:.375rem;}
+
+
