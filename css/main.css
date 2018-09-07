@@ -1,0 +1,134 @@
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+.element {
+  @include clearfix;
+}
+.fl{
+	float: left;
+
+}
+.fr{
+	float: right;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+ul,li,dl,dt,dd{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	
+}
+a:hover{
+	color: red;
+	text-decoration: none;
+}
+/*头*/
+header {
+	height: 4rem;
+}
+.container{
+	width: 100%;
+}
+.container .div li{
+	height: 4rem;
+	line-height: 4rem;
+}
+/* .container ul li a{
+	
+	height: 3em;
+} */
+.container .logo {
+	height: 4rem;
+	line-height: 4rem;
+	
+}
+.container .logo img{
+	width: 2.5rem;
+	height: 2.5rem;
+	
+	
+}
+/*banner*/
+.banner .swiper-container .swiper-wrapper .swiper-slide img{
+	width: 100%;
+	height: 30rem;
+}
+/*穿墙*/
+.wall{
+	position: relative;
+	width: 100%;
+	height: 11.5rem;
+	
+}
+#wall{
+	
+	margin:0 auto;
+	position: absolute;
+	
+	
+}
+#wall ul{ 
+	width:10rem;
+	height:10rem;
+	background:#ccc;
+	float:left; 
+	margin:.625rem; 
+	position:relative; 
+	overflow:hidden; 
+}
+#wall li{ 
+	width:10rem; 
+	height:10rem; 
+	background:green; 
+	position:absolute; 
+	left:0; 
+	top:0; 
+	font-size:1.25rem; 
+	line-height:10rem; 
+	text-align: center;
+	color:#fff;
+}
+/*回到顶部*/
+#totop {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

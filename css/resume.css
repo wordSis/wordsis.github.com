@@ -1,0 +1,153 @@
+*{ 
+	margin:0;
+	padding:0; 
+}
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+.element {
+  @include clearfix;
+}
+.fl{
+	float: left;
+
+}
+.fr{
+	float: right;
+}
+a{
+	text-decoration: none;
+}
+ul,li,dl,dt,dd{
+	list-style: none;
+}
+.body{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/ba.jpg');
+}
+/*nav*/
+.nav{
+	overflow-x: hidden;
+}
+/*name*/
+.name h3{
+	border-radius: 50%;
+	width:6rem;
+	height: 4rem;
+	border: 1px solid #ccc;
+	text-align: center;
+	line-height: 4rem;
+	background: black;
+	color: red;
+	position: fixed;
+	left: 1rem;
+	top: 1rem;
+
+}
+/*box*/
+.box{
+	position: relative;
+	
+	padding-top: 5rem;
+	
+}
+#box{ 
+	position:fixed; 
+	left:1rem; 
+	bottom:1rem; 
+	width:100%; 
+	text-align:center; 
+	z-index: 1000;
+}
+#box img{
+ 	width:4rem; 
+}
+#box .item{
+		position: relative;
+		width: 5rem;
+		height: 5rem;
+		display: inline-block;
+}
+#box .item span{
+		
+		display: none;
+		
+}
+/*回到顶部*/
+#totop {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    display: none;
+    z-index: 1111;
+}
+/*book*/
+.book{
+	width: 100%;
+	height: 19rem;
+	position: relative;
+	margin:2rem auto; 
+	display: none;
+}
+.book #prev{
+		position: absolute;
+		left: 48%;
+		bottom: 0;
+		z-index: 999;
+}
+.book #next{
+		position: absolute;
+		left:50%;
+		bottom: 0;
+		z-index: 999;
+}
+#book{ 
+	width: 34rem;
+	height: 19rem;
+	position:relative; 
+	-webkit-transform-style:preserve-3d; 
+	perspective:800px; 
+	margin: auto;
+}
+#book li{
+	position:absolute;
+	left:50%; 
+	top:50%;
+	bottom: 50%;
+	margin: auto;
+	margin-top: -10rem; 
+	border: 1px solid #ccc; 
+	transition:1s all ease; 
+	opacity:0; 
+}
+#book li img{
+	height: 15rem;
+	
+}
+#book .l2{
+	transform:translateX(15rem) rotateY(45deg);
+}
+#book .l1{
+	opacity:1; 
+	transform:translateX(-12.5rem) rotateY(45deg); 
+}
+#book .cur{ 
+	opacity:1; 
+}
+#book .r1{ 
+	opacity:1; 
+	transform:translateX(12.5rem) rotateY(-45deg); 
+}
+#book .r2{ 
+	transform:translateX(15rem) rotateY(-45deg); 
+}
+#main{
+	height: 19rem;
+	margin: auto;
+}
